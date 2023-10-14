@@ -21,7 +21,7 @@ const SignIn = () => {
                 email,
                 lastLoggedAt: result.user?.metadata?.lastSignInTime
             }
-            fetch('https://coffee-store-server-5216kra3g-potter98s-projects.vercel.app/user', {
+            fetch('https://coffee-store-server-livid.vercel.app/user', {
                 method: 'PATCH',
                 headers: {
                     'Content-Type': 'application/json'

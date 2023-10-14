@@ -17,7 +17,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App></App>,
-    loader: () => fetch('https://coffee-store-server-5216kra3g-potter98s-projects.vercel.app/coffee')
+    loader: () => fetch('https://coffee-store-server-livid.vercel.app/coffee')
   },
   {
     path: "/addcoffee",
@@ -26,7 +26,7 @@ const router = createBrowserRouter([
   {
     path: "/updatecoffee/:id",
     element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({params}) => fetch(`https://coffee-store-server-5216kra3g-potter98s-projects.vercel.app/coffee/${params.id}`)
+    loader: ({params}) => fetch(`https://coffee-store-server-livid.vercel.app/coffee/${params.id}`)
   },
   {
     path: "/signup",
@@ -39,7 +39,7 @@ const router = createBrowserRouter([
   {
     path: "/users",
     element: <Users></Users>,
-    loader: () => fetch('https://coffee-store-server-5216kra3g-potter98s-projects.vercel.app/user')
+    loader: () => fetch('https://coffee-store-server-livid.vercel.app/user')
   }
 ]);
 

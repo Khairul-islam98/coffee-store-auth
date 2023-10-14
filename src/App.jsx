@@ -7,6 +7,7 @@ import Banner from './components/Banner/Banner'
 import Header from './components/Header/Header'
 import BannerSecond from './components/Banner/BannerSecond/BannerSecond'
 import vector from './assets/images/Vector.png'
+import Navbar from './components/navbar/Navbar'
 
 function App() {
 
