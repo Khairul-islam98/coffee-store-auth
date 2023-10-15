@@ -7,13 +7,13 @@ const AddCoffee = () => {
         e.preventDefault();
         const form = e.target
         const name = form.name.value
-        const quantity = form.quantity.value
+        const chef = form.chef.value
         const supplier = form.supplier.value
         const taste = form.taste.value
         const category = form.category.value
         const details = form.details.value
         const photo = form.photo.value
-        const newCoffee = { name, quantity, supplier, taste, category, details, photo }
+        const newCoffee = { name, chef, supplier, taste, category, details, photo }
 
         fetch('https://coffee-store-server-livid.vercel.app/coffee',{
             method: 'POST',
@@ -53,10 +53,10 @@ const AddCoffee = () => {
                     </div>
                     <div className="form-control w-1/2">
                         <label className="label">
-                            <span className="label-text">Available Quantity</span>
+                            <span className="label-text">Chef</span>
                         </label>
                         <label className="input-group">
-                            <input type="text" name='quantity' placeholder="Available Quantity" className="input input-bordered w-full" />
+                            <input type="text" name='chef' placeholder="coffee chef" className="input input-bordered w-full" />
                         </label>
                     </div>
                 </div>

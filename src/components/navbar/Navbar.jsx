@@ -3,15 +3,39 @@ import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     return (
-        <div>
+        <div className='flex justify-center items-center gap-6 py-5'>
             <NavLink
-                to="/messages"
+                to="/"
                 className={({ isActive, isPending }) =>
-                    isPending ? "pending" : isActive ? "active" : ""
+                    isPending ? "pending" : isActive ? "text-red-500 font-bold underline" : ""
                 }
             >
-                Messages
-            </NavLink>;
+                Home
+            </NavLink>
+            <NavLink
+                to="/signin"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500 font-bold underline" : ""
+                }
+            >
+                Sign In
+            </NavLink>
+            <NavLink
+                to="/signup"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500 font-bold underline" : ""
+                }
+            >
+                Sign Up
+            </NavLink>
+            <NavLink
+                to="/users"
+                className={({ isActive, isPending }) =>
+                    isPending ? "pending" : isActive ? "text-red-500 font-bold underline" : ""
+                }
+            >
+                Users
+            </NavLink>
 
         </div>
     );

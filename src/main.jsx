@@ -1,50 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
-import AddCoffee from './components/AddCoffee.jsx';
-import UpdateCoffee from './components/UpdateCoffee.jsx';
-import Signup from './components/Signup/Signup.jsx';
-import AuthProvider from './provider/AuthProvider.jsx';
-import Users from './components/Users.jsx';
-import SignIn from './components/SignIn/SignIn.jsx';
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App></App>,
-    loader: () => fetch('https://coffee-store-server-livid.vercel.app/coffee')
-  },
-  {
-    path: "/addcoffee",
-    element: <AddCoffee></AddCoffee>,
-  },
-  {
-    path: "/updatecoffee/:id",
-    element: <UpdateCoffee></UpdateCoffee>,
-    loader: ({params}) => fetch(`https://coffee-store-server-livid.vercel.app/coffee/${params.id}`)
-  },
-  {
-    path: "/signup",
-    element: <Signup></Signup>,
-  },
-  {
-    path: '/signin',
-    element: <SignIn></SignIn>,
-  },
-  {
-    path: "/users",
-    element: <Users></Users>,
-    loader: () => fetch('https://coffee-store-server-livid.vercel.app/user')
-  }
-]);
+import AuthProvider from './provider/AuthProvider.jsx';
+import Route from './routes/Route.jsx';
+import { RouterProvider } from 'react-router-dom';
+
+
+
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <AuthProvider><RouterProvider router={router} /></AuthProvider>
+    <AuthProvider><RouterProvider router={Route} /></AuthProvider>
   </React.StrictMode>,
 )

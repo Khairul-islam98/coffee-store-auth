@@ -1,9 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import Swal from 'sweetalert2';
+import { SlEye, SlPencil, SlTrash } from "react-icons/sl";
 
 const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
-    const { _id, name, quantity, supplier, taste, category, details, photo } = coffee
+    const { _id, name, chef, supplier, taste, category, details, photo } = coffee
 
 
     const handleDelete = _id => {
@@ -38,26 +39,25 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
 
     return (
-        <div className="card card-side bg-base-100 shadow-xl">
-            <figure><img className='w-96 h-80 ' src={photo} alt="Movie" /></figure>
-            <div className="flex justify-between w-full pr-4">
-                <h2 className="card-title">{name}</h2>
-                <div>
-                    <p>{quantity}</p>
-                    <p>{supplier}</p>
-                    <p>{taste}</p>
-                </div>
-                <div className="card-actions justify-end">
-                    <div className="btn-group btn-group-vertical space-y-4">
-                        <button className="btn btn-active">View</button>
-                        <Link to={`/updatecoffee/${_id}`}>
-                        <button className="btn">Edit</button>
-                        </Link>
-                        <button onClick={() => handleDelete(_id)} className="btn">X</button>
-                    </div>
+        <div className="card lg:card-side bg-[#F5F4F1] shadow-xl">
+        <figure><img className='flex md:w-96 h-48 ' src={photo} alt="Movie" /></figure>
+        <div className="flex justify-between w-full pr-4 py-20">
+            <div className='flex flex-col font-ralway text-lg'>
+            <h2 className="py-2"> name: {name}</h2>
+            <p className="py-2"> Chif: {chef}</p>
+            <p className=""> Price: 890tk</p>
+            </div>
+            <div className="card-actions justify-end">
+                <div className="btn-group btn-group-vertical space-y-4">
+                    <button className="btn bg-[#E3B577] text-white text-2xl"><span><SlEye></SlEye></span></button>
+                    <Link to={`/updatecoffee/${_id}`}>
+                    <button className="btn bg-[#3c393b] text-white text-2xl"><span><SlPencil></SlPencil></span></button>
+                    </Link>
+                    <button onClick={() => handleDelete(_id)} className="btn bg-[#ea4744] text-white text-2xl"><span><SlTrash></SlTrash></span></button>
                 </div>
             </div>
         </div>
+    </div>
     );
 };
 
