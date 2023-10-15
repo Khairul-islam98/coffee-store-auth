@@ -8,6 +8,9 @@ import Header from './components/Header/Header'
 import BannerSecond from './components/Banner/BannerSecond/BannerSecond'
 import vector from './assets/images/Vector.png'
 import { Link } from 'react-router-dom'
+import Social from './components/Social/Social'
+import Footer from './components/Footer/Footer'
+import headerImg from './assets/images/header.png'
 
 function App() {
 
@@ -22,7 +25,7 @@ function App() {
         <Banner></Banner>
         <BannerSecond></BannerSecond>
       </div>
-      <div className='text-center py-20'>
+      <div className='text-center mt-20'>
         <span>--- Sip & Savor ---</span>
         <h1 className='text-[#331A15] text-5xl font-rancho mt-2 mb-3'>Our Popular Products</h1>
           <Link to='/addcoffee'>
@@ -33,14 +36,20 @@ function App() {
           </Link>
       </div>
       <div className='m-20'>
-
-        <h1 className='text-6xl text-center text-purple-600 my-20'>Hot Hot Cold Coffee: {coffees.length}</h1>
         <div className='grid md:grid-cols-2 gap-4'>
           {
             coffees.map((coffee) => <CoffeeCard key={coffee._id} coffee={coffee} coffees={coffees} setCoffees={setCoffees} />
             )
           }
         </div>
+        <div>
+          <Social></Social>
+         
+        </div>
+      </div>
+      <Footer></Footer>
+      <div className="hero mx-auto lg:min-h-[50px]" style={{ backgroundImage: `url(${headerImg})` }}>
+      <p className='flex justify-center items-center font-rancho text-lg text-white'>Copyright Espresso Emporium ! All Rights Reserved</p>
       </div>
     </div>
   )

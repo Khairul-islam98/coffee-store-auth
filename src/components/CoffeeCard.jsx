@@ -39,12 +39,12 @@ const CoffeeCard = ({ coffee, coffees, setCoffees }) => {
 
 
     return (
-        <div className="card lg:card-side bg-[#F5F4F1] shadow-xl">
+        <div className="card md:card-side bg-[#F5F4F1] shadow-xl">
         <figure><img className='flex md:w-96 h-48 ' src={photo} alt="Movie" /></figure>
         <div className="flex justify-between w-full pr-4 py-20">
             <div className='flex flex-col font-ralway text-lg'>
             <h2 className="py-2"> name: {name}</h2>
-            <p className="py-2"> Chif: {chef}</p>
+            <p className="py-2"> Chef: {chef}</p>
             <p className=""> Price: 890tk</p>
             </div>
             <div className="card-actions justify-end">
